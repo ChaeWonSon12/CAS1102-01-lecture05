@@ -21,7 +21,7 @@ void decode_steganography(int image_data[], int data_size, std::string key) {
             break;
         }
 
-        std::cout << (char)secret_value;
+        std::cout << (char)secret_value
             << " (" << secret_value << ")" << std::endl;
 
         i++;
