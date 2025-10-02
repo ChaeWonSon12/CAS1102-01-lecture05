@@ -6,27 +6,17 @@
 
 void decode_steganography(int image_data[], int data_size, std::string key) {
 
-    int currentIndex = 1000;
-    int keylen = key.size();
-    int i =0;   
-
-    while (true) {
-        currentIndex += (int)key[i%keylen];
+    int currentIndex = 1000;std::string data;
+    int i = 0;
+    while (image_data[currentIndex] != 0) {
         if (currentIndex >= data_size) {
             break;
         }
-        int secret_value = image_data[currentIndex];
-
-        if (secret_value ==0) {
-            break;
-        }
-
-        std::cout << (char)secret_value
-            << " (" << secret_value << ")" << std::endl;
-
+        currentIndex += (int)key[i % key.size()];
+        data += image_data[currentIndex];
         i++;
     }
-
+    std::cout << data;
 
     // TODO: Implement the solve_steganography function.
     /**
