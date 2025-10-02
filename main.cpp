@@ -7,7 +7,7 @@
 void decode_steganography(int image_data[], int data_size, std::string key) {
 
     int currentIndex = 1000;
-    int keylen = key.size()
+    int keylen = key.size();
     int i =0;   
 
     while (true) {
